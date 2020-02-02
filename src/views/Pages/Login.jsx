@@ -49,11 +49,11 @@ class Login extends React.Component {
     passwordErrorLogin:null
   }
 onclick(){
-  if (this.state.Email===''&&this.state.Password==='') {
+  if (this.state.Email===''&&this.state.Password.length<6) {
     this.setState({
       emailError: (
         <small className="text-danger">
-          Email is required and format should be <i>john@doe.com</i>.
+         User Name is requierd
         </small>
       ),Email:''
     });
@@ -121,17 +121,8 @@ this.setState({isLodding:true});
   }
 
 
-  handleEmailChange(event) {
-    var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    re.test(event.target.value) === false
-      ? this.setState({
-          emailError: (
-            <small className="text-danger">
-              Email is required and format should be <i>john@doe.com</i>.
-            </small>
-          ),Email:''
-        })
-      : this.setState({ emailError: null,Email:event.target.value});
+  UserName(event) {
+   this.setState({Email:event.target.value})
   }
   handleLoginPassword(event) {
     event.target.value.length < 6
@@ -166,7 +157,7 @@ Conntent(){
         <Col lg="5" md="7">
           <Card className="bg-secondary shadow border-0">
             <CardHeader className="bg-transparent pb-3">
-                    <h1 className="text-black text-center">OCVR Login </h1>
+            <h1 className="text-black text-center">Call Center</h1>
             </CardHeader>
             <CardBody className="px-lg-5 py-lg-3">
               <Form role="form">
@@ -177,7 +168,7 @@ Conntent(){
                         <i className="ni ni-email-83" />
                       </InputGroupText>
                     </InputGroupAddon>
-                    <Input  placeholder="Email" type="email" onChange={(e)=>{this.handleEmailChange(e)}}/>
+                    <Input  placeholder="User Name" type="text" onChange={(e)=>{this.UserName(e)}}/>
                   </InputGroup>
                   {this.state.emailError}
                 </FormGroup>

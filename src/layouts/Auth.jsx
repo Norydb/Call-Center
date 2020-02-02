@@ -21,8 +21,7 @@ import { Container, Row, Col } from "reactstrap";
 import AuthNavbar from "components/Navbars/AuthNavbar.jsx";
 import AuthFooter from "components/Footers/AuthFooter.jsx";
 import Auths from "../views/Pages/Login"
-import Register from "../views/Pages/Register"
-import Confarmmessage from '../views/Pages/Confirmmessage'
+
 
 
 class Auth extends React.Component { 
@@ -33,23 +32,11 @@ class Auth extends React.Component {
     document.body.classList.remove("bg-default");
   }
   getRoutes=() => {
-      var flage = localStorage.getItem('flage') === undefined ? false :localStorage.getItem('flage');
-    if(window.location.pathname=== "/Confirm/Message/"){
-        if (flage==='true'){
-        return  <Route key={3} render={props =><Confarmmessage OnLogin={this.props.OnLogin} isLodding={this.props.isLoding} />}/>;
-       } 
-       window.location.pathname='/auth/register';
-      }
-
-      if(window.location.pathname=== "/auth/register"){
-        return <Route key={0} render={props =><Register  OnLogin={this.props.OnLogin} isLodding={this.props.isLoding} />}/>
-      }
-
       if(window.location.pathname=== "/auth/login"){
         return <Route key={1} render={props =><Auths OnLogin={this.props.OnLogin} isLodding={this.props.isLoding} />}/>
       }
-      window.location.pathname='/auth/register';
-      return <Route key={0} render={props =><Register  OnLogin={this.props.OnLogin} isLodding={this.props.isLoding} />}/>
+      window.location.pathname="/auth/login"
+      return <Route key={1} render={props =><Auths OnLogin={this.props.OnLogin} isLodding={this.props.isLoding} />}/>
     };
   render() {
     return (

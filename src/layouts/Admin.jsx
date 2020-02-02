@@ -29,7 +29,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from 'react-loader-spinner'
 // import Profile from "../views/Pages/Profile";
 // import Tables from "../views/Pages/Tables";
-import Index from "../views/Index";
+import Index from "../views/Dublicate";
 import AI from '../views/Pages/AccuontInformation'
 import routes from "routes.js";
 
@@ -110,32 +110,37 @@ setTimeout(() => {
   }
 
 getRoutes = () => {
-    if(window.location.pathname==='/admin/index'){
+    if(window.location.pathname==='/admin/Dublicate'){
      return( 
      <Route
-      path="/admin/index"
-      name= "Dashboard"
+      path="/admin/Dublicate"
+      name= "Dublicate"
       icon= "ni ni-tv-2 text-primary"
       component= {Index}
       key={1}
     />)
     }
-    if(window.location.pathname==='/admin/AccountInformation'){
+    if(window.location.pathname==='/admin/LiveChat'){
       return( 
       <Route
-       path="/admin/AccountInformation"
-       name= "Dashboard"
+       path="/admin/LiveChat"
+       name= "LiveChat"
        icon= "ni ni-tv-2 text-primary"
        component= {AI}
        key={2}
      />)
      }
-    return <Route
-       name= "Dashboard"
+     if(window.location.pathname==='/admin/NID'){
+      return( 
+      <Route
+       path="/admin/NID"
+       name= "NID"
        icon= "ni ni-tv-2 text-primary"
-       component= {Index}
-       key={999}
-     />
+       component= {AI}
+       key={2}
+     />)
+     }
+     window.location.pathname='/admin/Dublicate';
   };
   getBrandText = path => {
     for (let i = 0; i < routes.length; i++) {

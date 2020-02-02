@@ -15,7 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import Index from "views/Index.jsx";
+import Index from "views/Dublicate.jsx";
 // import Profile from "views/Pages/Profile.jsx";
 // import Maps from "views/Pages/Maps.jsx";
 // import Register from "views/Pages/Register.jsx";
@@ -25,18 +25,25 @@ import AI from "views/Pages/AccuontInformation.jsx";
 
 var routes = [
   {
-    path: "/index",
-    name: "Dashboard",
+    path: "/Dublicate",
+    name: "Dublicate",
     icon: "ni ni-tv-2 text-primary",
     component: Index,
     layout: "/admin"
   },
   {
-    path: "/AccountInformation",
-    name: "Account",
+    path: "/LiveChat",
+    name: "Live Chat",
     icon: "ni ni-planet text-blue",
     component: AI,
     layout: "/admin"
   },
+  {
+    path: "/NID",
+    name: "NID",
+    icon: "ni ni-planet text-blue",
+    component: AI,
+    layout: "/admin"
+  }
 ];
 export default routes;
