@@ -49,7 +49,7 @@
     "hide-scrollbar-react": "^1.1.6",
     "i": "^0.3.6",
     "moment": "2.24.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "nouislider": "13.1.1",
     "npm": "^6.13.4",
     "react": "16.8.4",
